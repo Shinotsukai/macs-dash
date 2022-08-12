@@ -1,0 +1,21 @@
+<div *ngIf="userData | async as users">
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">User Information</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header app-custom-class">First Name</th>
+                <th scope="col" class="govuk-table__header app-custom-class">Last Name</th>
+                <th scope="col" class="govuk-table__header app-custom-class">Email Address</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr *ngFor="let user of users" class="govuk-table__row">
+                <td class="govuk-table__cell">{{user.firstName}}</td>
+                <td class="govuk-table__cell">{{user.lastName}}</td>
+                <td class="govuk-table__cell">{{user.emailAddress}}</td>
+              </tr>
+              
+            </tbody>
+          </table>
+
+</div>

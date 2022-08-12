@@ -1,0 +1,39 @@
+<fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Please enter your details
+      </h1>
+    </legend>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)">
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="firstName">
+          First Name
+        </label>
+        <p id="firstName-error" class="govuk-error-message" *ngIf="submitted && userFormControls.firstName.errors?.required">
+            <span class="govuk-visually-hidden">Error:</span> Please enter a valid first name
+          </p>
+        <input class="govuk-input" formControlName="firstName" id="firstName" name="firstName" type="text" >
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="lastName">
+          Last Name
+        </label> 
+        <p id="lastName-error" class="govuk-error-message" *ngIf="submitted && userFormControls.lastName.errors?.required">
+            <span class="govuk-visually-hidden">Error:</span> Please enter a valid last name
+          </p>
+        <input class="govuk-input" formControlName="lastName" id="lastName" name="lastName" type="text" >
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="emailAddress">
+          Email Address
+        </label>
+        <p id="email-error" class="govuk-error-message" *ngIf="submitted && userFormControls.emailAddress.errors?.required">
+            <span class="govuk-visually-hidden">Error:</span> Please enter a valid email address
+          </p>
+        <input class="govuk-input" formControlName="emailAddress" id="emailAddress" name="emailAddress" type="email">
+      </div>
+    <button type="sumbit"  class="govuk-button" >Save and continue</button>
+</form>
+</fieldset>
